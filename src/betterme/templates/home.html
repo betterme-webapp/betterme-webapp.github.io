@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for survey in surveys %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ survey.author }}</a>
+              <small class="text-muted">{{ survey.dateCompleted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ survey.questionText }}</a></h2>
+            <p class="article-content">{{ survey.answerText }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
