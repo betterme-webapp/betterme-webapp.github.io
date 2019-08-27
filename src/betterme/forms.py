@@ -26,3 +26,8 @@ class LoginForm(FlaskForm):
 class UpdateAccountForm(FlaskForm):
     picture = FileField('Update Profile Picture', validators = [FileAllowed(['jpg','png'])])
     submit = SubmitField('Update')
+
+class AnswerForm(FlaskForm):
+    title = StringField('Question', validators=[DataRequired()])
+    content = TextAreaField('Answer', validators=[DataRequired()])
+    submit = SubmitField('Submit')
